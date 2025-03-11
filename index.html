@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мой лэндинг</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    .custom-banner {
+      margin: 0 auto;
+    }
+
+    .custom-banner__wrapper {
+      position: relative;
+      max-width: 100%;
+      text-align: center;
+      display: inline-block; /* Чтобы позиционировать по центру */
+    }
+
+    .custom-banner__img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Кнопка поверх изображения (на десктопе) */
+    .custom-banner__button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0; /* обнулим, чтобы не мешало */
+    }
+
+    .custom-banner__button a {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 9999px; /* Закруглённые углы */
+    }
+
+    /* На мобильных: кнопка становится ниже изображения */
+    @media screen and (max-width: 749px) {
+      .custom-banner__button {
+        position: static;
+        transform: none;
+        margin: 12px auto 0 auto; /* отступ сверху, выравнивание по центру */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Можно здесь добавить header, меню, лого и т.д. -->
+
+  <section class="custom-banner">
+    <div class="custom-banner__wrapper">
+      <picture>
+        <!-- Мобильная картинка. Появится при ширине экрана <= 749px -->
+        <source
+          media="(max-width: 749px)"
+          srcset="imgs/Frame 1.png"
+        >
+
+        <!-- Десктопная картинка. Появится при ширине экрана > 749px -->
+        <img
+          class="custom-banner__img"
+          src="imgs/Frame 2.png"
+          alt="Мой баннер"
+        >
+      </picture>
+
+      <!-- Кнопка: на десктопе окажется поверх изображения (по центру),
+           на мобильном перейдёт вниз под картинку. -->
+      <div class="custom-banner__button">
+        <a href="#action">Нажми меня</a>
+      </div>
+    </div>
+  </section>
+
+
+  <div style="padding:20px; text-align:center;">
+  </div>
+</body>
+</html>
